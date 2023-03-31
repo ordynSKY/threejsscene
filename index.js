@@ -32,7 +32,8 @@ const shapes = [];
 
 function createShape() {
     const geometryType = geometrySelect.value;
-    const size = parseFloat(sizeInput.value);
+    const size = parseFloat(sizeInput.value / 1.5);
+    console.log(size);
 
     let geometry;
     switch (geometryType) {
@@ -78,8 +79,8 @@ function createShape() {
 }
 
 function limitInput() {
-    if (sizeInput.value > 9) {
-        sizeInput.value = 9;
+    if (sizeInput.value > 5) {
+        sizeInput.value = 5;
     }
 }
 
