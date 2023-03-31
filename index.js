@@ -81,6 +81,8 @@ function createShape() {
 function limitInput() {
     if (sizeInput.value > 5) {
         sizeInput.value = 5;
+    } else if (sizeInput.value <= 0) {
+        sizeInput.value = 0;
     }
 }
 
