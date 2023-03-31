@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Jomhuria&display=swap"
+            rel="stylesheet"
+        />
+        <title>Three.js Task</title>
+        <style>
+            * {
+                font-family: "Lato", sans-serif;
+            }
+            body {
+                margin: 0;
+            }
+            canvas {
+                display: block;
+            }
+            #inputs {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                display: flex;
+                flex-direction: row;
+                background-color: #747880;
+                color: white;
+            }
+            #geometry {
+                margin-right: 10px;
+            }
+            #shapes {
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                width: 410px;
+            }
+            .shape {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                border: 1px solid black;
+            }
+            .shape-uuid {
+                margin-right: 10px;
+            }
+            .remove-shape {
+                margin-left: 10px;
+                cursor: pointer;
+            }
+            #geometry,
+            #size,
+            #create {
+                font-size: 16px;
+                padding: 8px 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            #create {
+                margin-left: 10px;
+                background-color: #007bff;
+                color: #fff;
+                cursor: pointer;
+            }
+            .remove-shape {
+                background-color: #007bff;
+                color: #fff;
+                cursor: pointer;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="inputs">
+            <label>
+                Geometry:
+                <select id="geometry">
+                    <option value="Cube">Cube</option>
+                    <option value="Sphere">Sphere</option>
+                    <option value="Pyramid">Pyramid</option>
+                </select>
+            </label>
+            <label>
+                Size:
+                <input
+                    type="number"
+                    id="size"
+                    value="1"
+                    oninput="limitInput()"
+                />
+            </label>
+            <button id="create">Create</button>
+        </div>
+        <div id="shapes"></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdn.rawgit.com/mrdoob/three.js/r129/examples/js/controls/OrbitControls.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
